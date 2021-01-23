@@ -1,0 +1,107 @@
+---
+layout: layouts/home.njk
+fa-icon: 'fa-home'
+eleventyNavigation:
+  key: Home
+  order: 1
+  url: /#
+---
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">
+      I'm</span> {{ metadata.title }}.
+    </h1>
+    <p>
+      {{ metadata.description }}
+    </p>
+    <img src="{{ 'img/me.png' | url }}" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">{{ metadata.author.name }}</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>
+      About me paragraph
+    </p>
+  </div>
+  <!-- Posts Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64">
+    <h1>Latest 3 Posts</h1>
+    {% set postslist = collections.posts | head(-3) %}
+    {% set postslistCounter = collections.posts | length %}
+    {% include "postslist.njk" %}
+    <p>
+      More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.
+    </p>
+  </div>
+  <!-- Skils Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64">
+    <h3 class="w3-padding-16 w3-text-light-grey">Skills</h3>
+    <p class="w3-wide">Programming</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+    </div>
+    <p class="w3-wide">Web Design</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div>
+    <p class="w3-wide">DevOps</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div><br>
+
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">25+ yrs</span><br>
+        Engineer
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">20+ yrs</span><br>
+        Programming
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">20+ yrs</span><br>
+        Web Design
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">5+ yrs</span><br>
+        DevOps
+      </div>
+    </div>
+    <button class="w3-button w3-light-grey w3-padding-large w3-section" onclick="window.open('{{ 'files/resume.pdf' | url}}')">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+  </div>
+  {#
+  {% include "portfolio.njk" %}
+  #}
+  <!-- End Portfolio Section -->
+</div>
+<!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> {{ metadata.author.location }}</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: {{ metadata.author.phone }}</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: {{ metadata.author.email }}</p>
+    </div><br>
+    <!--
+    <p>Lets get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+    -->
+  <!-- End Contact Section -->
+  </div>
+
+

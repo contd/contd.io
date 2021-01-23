@@ -1,0 +1,34 @@
+{
+  "name": "Contd",
+  "version": "1.0.0",
+  "description": "contd",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/contd/contd.github.io.git"
+  },
+  "author": {
+    "name": "Jason Kumpf",
+    "email": "kumpf.jason@gmail.com",
+    "url": "https://contd.github.io/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/contd/contd.github.io/issues"
+  },
+  "homepage": "https://github.com/contd/contd.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "luxon": "^1.25.0",
+    "markdown-it": "^12.0.4",
+    "markdown-it-anchor": "^7.0.0"
+  }
+}

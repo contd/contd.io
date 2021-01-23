@@ -1,0 +1,23 @@
+{
+  "title": "Jason Kumpf",
+  "url": "https://contd.github.io/",
+  "description": "Engineer and Web Developer",
+  "feed": {
+    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://myurl.com/"
+  },
+  "author": {
+    "name": "Jason Kumpf",
+    "email": "kumpf.jason@gmail.com",
+    "phone": "+1 513.685.0866",
+    "location": "Cincinnati, OH"
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": "",
+    "twitter": ""
+  }
+}
