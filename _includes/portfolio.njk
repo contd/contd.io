@@ -3,36 +3,35 @@
     <h2 class="w3-text-light-grey">Photos</h2>
     <hr style="width:200px" class="w3-opacity">
 
-    <!-- Grid for photos -->
     <div class="w3-row-padding" style="margin:0 -16px">
-    <style>
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0 4px;
-      }
-      /* Create two equal columns that sit next to each other */
-      .column {
-        flex: 50%;
-        max-width: 50%;
-        padding: 0 4px;
-      }
-      .column img {
-        margin-top: 8px;
-        vertical-align: middle;
-      }
-      {% raw %}
-      @media (max-width: 600px) {
-        .column {
-          flex: 100%;
-          max-width: 100%;
+      <style>
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 4px;
         }
-      }
-      {% endraw %}
-    </style>
+        /* Create two equal columns that sit next to each other */
+        .column {
+          flex: 50%;
+          max-width: 50%;
+          padding: 0 4px;
+        }
+        .column img {
+          margin-top: 8px;
+          vertical-align: middle;
+        }
+        {% raw %}
+        @media (max-width: 600px) {
+          .column {
+            flex: 100%;
+            max-width: 100%;
+          }
+        }
+        {% endraw %}
+      </style>
     <div class="row">
       <div class="column">
-      {% for post in collections.photo | head(-8) %}
+      {% for post in collections.photo | head(-6) %}
         {% if loop.index==4 %}
           </div><div class="column">
         {% endif %}
@@ -40,5 +39,7 @@
       {% endfor %}
       </div>
     </div>
-    <!-- End photo grid -->
+    <p>
+      More photos can be found in <a href="{{ '/photos/' | url }}">the gallery</a>.
+    </p>
   </div>

@@ -7,25 +7,25 @@ eleventyNavigation:
   url: /#
 ---
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">
-      I'm</span> {{ metadata.title }}.
+    <h1 class="w3-jumbo">
+      {{ metadata.title }}
     </h1>
     <p>
       {{ metadata.description }}
     </p>
-    <img src="{{ 'img/me.png' | url }}" alt="boy" class="w3-image" width="992" height="1108">
+    <img src="{{ 'img/me.png' | url }}" alt="boy" class="w3-image" width="503" height="691">
   </header>
   <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey">{{ metadata.author.name }}</h2>
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2 class="w3-text-light-grey">About</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>
       About me paragraph
     </p>
   </div>
   <!-- Posts Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64">
-    <h1>Latest 3 Posts</h1>
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32">
+    <h3>Latest 3 Posts</h3>
     {% set postslist = collections.posts | head(-3) %}
     {% set postslistCounter = collections.posts | length %}
     {% include "postslist.njk" %}
@@ -34,7 +34,7 @@ eleventyNavigation:
     </p>
   </div>
   <!-- Skils Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64">
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32">
     <h3 class="w3-padding-16 w3-text-light-grey">Skills</h3>
     <p class="w3-wide">Programming</p>
     <div class="w3-white">
@@ -71,19 +71,17 @@ eleventyNavigation:
       <i class="fa fa-download"></i> Download Resume
     </button>
   </div>
-  {#
   {% include "portfolio.njk" %}
-  #}
   <!-- End Portfolio Section -->
 </div>
 <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact">
     <h2 class="w3-text-light-grey">Contact Me</h2>
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
       <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> {{ metadata.author.location }}</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: {{ metadata.author.phone }}</p>
+      <!--<p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: {{ metadata.author.phone }}</p>-->
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: {{ metadata.author.email }}</p>
     </div><br>
     <!--
