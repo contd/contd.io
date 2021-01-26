@@ -9,38 +9,34 @@ eleventyNavigation:
 <h1>Gallery</h1>
 
 <div class="w3-row-padding" style="margin:0 -16px">
-<style>
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-  }
-  /* Create two equal columns that sit next to each other */
-  .column {
-    flex: 50%;
-    max-width: 50%;
-    padding: 0 4px;
-  }
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-  }
-  {% raw %}
-  @media (max-width: 600px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-gap: 0.5rem;
+      justify-items: center;
+      margin: 0;
+      padding: 0;
     }
-  }
-  {% endraw %}
-</style>
-<div class="row">
-  <div class="column">
-  {% for post in collections.photo %}
-    {% if loop.index==8 %}
-      </div><div class="column">
-    {% endif %}
-    <a href="{{ post.url | url}}"><img src = "{{ post.data.image | url }}" style="width:100%;margin-bottom:0px" > </a>
-  {% endfor %}
+    .grid_frame {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .grid_img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: opacity 0.25s ease-in-out;
+    }
+    .grid_img:hover {
+      opacity: .7;
+    }
+  </style>
+  <div class="grid">
+    {% for post in collections.photo %}
+      <a href="{{ post.url | url}}" class="grid_frame">
+        <img src = "{{ post.data.image | url }}" class="grid_img">
+      </a>
+    {% endfor %}
   </div>
 </div>
