@@ -15,22 +15,23 @@ eleventyNavigation:
     </p>
     <img src="{{ 'img/me.png' | url }}" alt="boy" class="w3-image" width="503" height="691">
   </header>
+  <!-- Posts Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32">
+    <h2 class="w3-text-light-grey">Latest Posts</h2>
+    <hr style="width:200px" class="w3-opacity">
+    {% set postslist = collections.posts | head(-5) %}
+    {% set postslistCounter = collections.posts | length %}
+    {% include "postslist.njk" %}
+    <p>
+      More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.
+    </p>
+  </div>
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
     <h2 class="w3-text-light-grey">About</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>
       About me paragraph
-    </p>
-  </div>
-  <!-- Posts Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-32">
-    <h3>Latest Posts</h3>
-    {% set postslist = collections.posts | head(-5) %}
-    {% set postslistCounter = collections.posts | length %}
-    {% include "postslist.njk" %}
-    <p>
-      More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.
     </p>
   </div>
   <!-- Skils Section -->
